@@ -42,6 +42,6 @@ jobs:
         run: |
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
           brew install lcov
-          cpan -i Date::parse
+          cpan -i Date::Parse
           lcov --version
           genhtml --version
