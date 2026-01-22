@@ -50,3 +50,12 @@ jobs:
         run: |
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
           genhtml --version
+
+      - name: Upload Dummy XML report
+        uses: actions/upload-artifact@v3
+        with:
+          name: jacoco-xml-report
+          path: some-report.xml
+          retention-days: 1
+          if-no-files-found: ignore
+          
