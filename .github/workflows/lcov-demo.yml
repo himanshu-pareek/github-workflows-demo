@@ -45,3 +45,7 @@ jobs:
           cpan -i Date::Parse
           lcov --version
           genhtml --version
+
+      - name: Using genhtml
+        run: |
+          genhtml --version
