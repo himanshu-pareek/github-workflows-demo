@@ -52,7 +52,7 @@ jobs:
           genhtml --version
 
       - name: Upload Dummy XML report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: jacoco-xml-report
           path: some-report.xml
