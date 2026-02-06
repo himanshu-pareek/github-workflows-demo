@@ -33,16 +33,12 @@ jobs:
           echo "----------- Tree Command --------------"
           tree
           echo "---------------------------------------"
-
-          echo "---------- Tree .. command ------------"
-          echo tree ..
-          echo "---------------------------------------"
           
           echo "------------- Contents of sample.txt ----------------"
           cat sample.txt
           echo "------------- Content End ---------------------------"
 
-          cp ../baseline-repo/sample.txt sample-2.txt
+          cp baseline-repo/sample.txt sample-2.txt
           echo "------------- Contents of sample-2.txt ----------------"
           cat sample-2.txt
           echo "------------- Content End -----------------------------"
