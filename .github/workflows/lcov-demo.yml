@@ -21,27 +21,30 @@ jobs:
     steps:
       - name: checkout-current
         uses: actions/checkout@v4
-        
-      - name: checkout
-        uses: actions/checkout@v4
-        with:
-          ref: main
-          path: baseline-repo
+
+      - name: fetch-main
+        run: |
+          git fetch origin main
 
       - name: sample echo
         run: |
-          echo "----------- Tree Command --------------"
+          echo "----------- Tree Command (before) --------------"
           tree
           echo "---------------------------------------"
-          
-          echo "------------- Contents of sample.txt ----------------"
+
+          echo "------------- Contents of sample.txt (before) ----------------"
           cat sample.txt
           echo "------------- Content End ---------------------------"
 
-          cp baseline-repo/sample.txt sample-2.txt
-          echo "------------- Contents of sample-2.txt ----------------"
-          cat sample-2.txt
-          echo "------------- Content End -----------------------------"
+          git checkout main sample.txt
+
+          echo "----------- Tree Command (after) --------------"
+          tree
+          echo "---------------------------------------"
+          
+          echo "------------- Contents of sample.txt (after) ----------------"
+          cat sample.txt
+          echo "------------- Content End ---------------------------"
   # This workflow contains a single job called "build"
   code-coverage:
     # The type of runner that the job will run on
